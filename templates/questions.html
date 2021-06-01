@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %} {{title}} {% endblock %} 
+{% block instructions %}{% endblock%}
+{% block questions %}
+<form action="/questions/{{question_id}}" method="POST">
+    <p>Question {{question_id}}</p>
+    <p>{{question}}</p>
+    <input type="radio" id="{{choice1}}" name="question" value="{{choice1}}" required>
+    <label for="{{choice1}}">{{choice1}}</label>
+    <input type="radio" id="{{choice2}}" name="question" value="{{choice2}}" required>
+    <label for="{{choice2}}">{{choice2}}</label>
+    <div>
+    <button type="submit">Submit</button>
+    </div>
+    </form>
+{% endblock %}
