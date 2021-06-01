@@ -1,8 +1,13 @@
 {% extends 'base.html' %}
 {% block title %} {{title}} {% endblock %} 
 {% block instructions %}{% endblock%}
+{% block flash %}
+{% for msg in get_flashed_messages() %}
+    <p>{{msg}}</p>
+{% endfor %}
+{% endblock %}
 {% block questions %}
-<form action="/questions/{{question_id}}" method="POST">
+<form action="/answer" method="POST">
     <p>Question {{question_id}}</p>
     <p>{{question}}</p>
     <input type="radio" id="{{choice1}}" name="question" value="{{choice1}}" required>
